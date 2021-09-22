@@ -1,4 +1,4 @@
-# Pragmateam code-challenge-server-go
+# Pragmateam code challenge server (GO)
 
 ## Framework & languages
 This project uses
