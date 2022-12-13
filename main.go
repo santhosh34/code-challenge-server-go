@@ -3,10 +3,11 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/gorilla/mux"
 	"io/ioutil"
 	"log"
 	"net/http"
+
+	"github.com/gorilla/mux"
 )
 
 type Sensor struct {
@@ -29,7 +30,7 @@ func GetSensorTemperature(w http.ResponseWriter, r *http.Request) {
 
 	params := mux.Vars(r)
 
-	response, err := http.Get("https://temperature-sensor-service.herokuapp.com/sensor/" + params["id"])
+	response, err := http.Get("https://hasydbj5c4gpa2oozfpjpc677a0hxuob.lambda-url.ap-southeast-2.on.aws/sensor/" + params["id"])
 	if err != nil {
 		panic(err)
 	}
