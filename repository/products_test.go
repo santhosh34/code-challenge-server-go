@@ -41,7 +41,7 @@ func TestPopulateTempRangeStatusForHighTemp(t *testing.T) {
 	testProduct.MaxTemperature = 10
 	testProduct.Temperature = 15
 	dummyReturnProduct, err := testProduct.populateTempRangeStatus()
-	expectedHigh := regexp.MustCompile("Temperature is outside the correct range -  Its higher than desired")
+	expectedHigh := regexp.MustCompile("too high")
 	if !expectedHigh.MatchString(dummyReturnProduct.TempRangeStatus) || err != nil {
 		t.Fatalf(`Test failed as expected: "%v"  is different from actual: "%v". Error: %v `, dummyReturnProduct.TempRangeStatus, expectedHigh, err)
 	}
@@ -54,7 +54,7 @@ func TestPopulateTempRangeStatusForLowTemp(t *testing.T) {
 	testProduct.MaxTemperature = 10
 	testProduct.Temperature = 2
 	dummyReturnProduct, err := testProduct.populateTempRangeStatus()
-	expectedLow := regexp.MustCompile("Temperature is outside the correct range -  Its lower than desired")
+	expectedLow := regexp.MustCompile("too low")
 	if !expectedLow.MatchString(dummyReturnProduct.TempRangeStatus) || err != nil {
 		t.Fatalf(`Test failed as expected: "%v"  is different from actual: "%v". Error: %v `, dummyReturnProduct.TempRangeStatus, expectedLow, err)
 	}
@@ -68,7 +68,7 @@ func TestPopulateTempRangeStatusForWithInRangeScenario(t *testing.T) {
 	testProduct.MaxTemperature = 10
 	testProduct.Temperature = 6
 	dummyReturnProduct, err := testProduct.populateTempRangeStatus()
-	expectedWithInNormal := regexp.MustCompile("Temperature is within the correct range - as per their spec")
+	expectedWithInNormal := regexp.MustCompile("all good")
 	if !expectedWithInNormal.MatchString(dummyReturnProduct.TempRangeStatus) || err != nil {
 		t.Fatalf(`Test failed as expected: "%v"  is different from actual: "%v". Error: %v `, dummyReturnProduct.TempRangeStatus, expectedWithInNormal, err)
 	}

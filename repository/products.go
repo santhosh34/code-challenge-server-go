@@ -94,11 +94,11 @@ func (currentProduct *Product) PopulateTemperature(id string) (currentProductRef
 
 func (currentProduct *Product) populateTempRangeStatus() (currentProductRef Product, err error) {
 	if (currentProduct).Temperature < (currentProduct).MinTemperature {
-		(currentProduct).TempRangeStatus = "Temperature is outside the correct range -  Its lower than desired"
+		(currentProduct).TempRangeStatus = "too low"
 	} else if (currentProduct).Temperature > (currentProduct).MaxTemperature {
-		(currentProduct).TempRangeStatus = "Temperature is outside the correct range -  Its higher than desired"
+		(currentProduct).TempRangeStatus = "too high"
 	} else {
-		(currentProduct).TempRangeStatus = "Temperature is within the correct range - as per their spec"
+		(currentProduct).TempRangeStatus = "all good"
 	}
 	return *currentProduct, nil
 }
