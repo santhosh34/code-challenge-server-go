@@ -3,7 +3,7 @@
 ## Framework & languages
 This project uses
 * Golang 1.20
-* Optimized the code by delete multiple requests to backend from UI
+* Optimized the code by reducing number of requests to backend from UI
 * Instead of React Front End calling golang backend for each product
   Backend takes care of parallel processing of getting temperature for all products
  using go routines by hitting aws lambda service and consolidate the result and send to front end
