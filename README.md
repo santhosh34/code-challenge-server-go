@@ -77,10 +77,10 @@ Response:
 
 ```
 
-
+```
 Coverage Report:
-santhoshkumarnagulanchi@Santhoshkumars-MacBook-Pro code-challenge-server-go % go test ./... --cover
+$ go test ./... --cover
 ?   	server	[no test files]
 ok  	server/handlers	(cached)	coverage: 80.0% of statements
 ok  	server/repository	(cached)	coverage: 82.4% of statements
-santhoshkumarnagulanchi@Santhoshkumars-MacBook-Pro code-challenge-server-go % 
+```
