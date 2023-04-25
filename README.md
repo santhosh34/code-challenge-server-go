@@ -8,7 +8,7 @@ This project uses
   Backend takes care of parallel processing of getting temperature for all products
  using go routines by hitting aws lambda service and consolidate the result and send to front end
   This also gives the flexibility of adding new containers in future in a new admin module to add more containers or beer types.
-* The business logic related to weather the temperate is within the range business logic also moved to backend for optimal performance and parallel execution. 
+* The business logic related to whether the temperate is within the range business logic also moved to backend for optimal performance and parallel execution. 
   This gives us better performance as we used go concurrency model using go channels for all types of beers
 
 * 80 % + test coverage for core logic i.e excluding main and external mocking calls which can be covered in e2e tests.
